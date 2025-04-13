@@ -9,7 +9,7 @@ app.use(bodyparser.json())
 const port = 3000;
 
 app.post('/order', (req, res) => {
-    console.log('Received webhook:', req.body.toString())
+    console.log('Received webhook:', JSON.stringify(req.body, null, 2));
     res.sendStatus(200)
   })
 
