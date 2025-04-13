@@ -2,6 +2,7 @@ import express from "express"
 import bodyparser from "body-parser"
 
 
+
 const app = express();
 app.use(bodyparser.json())
 
@@ -9,7 +10,12 @@ app.use(bodyparser.json())
 const port = 3000;
 
 app.post('/order', (req, res) => {
-    console.log('Received webhook:', JSON.stringify(req.body, null, 2));
+
+    const order = req.body
+    const name = order.customer.first_name
+    const total = order.total_price
+
+    console.log(`${name} - ${total}`)
     res.sendStatus(200)
   })
 
