@@ -1,6 +1,6 @@
 import express from "express"
 import bodyparser from "body-parser"
-import createMessage from "./main";
+import createMessage from "./main.js";
 
 
 const app = express();
